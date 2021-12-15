@@ -1,32 +1,32 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:redux_flutter_app_for_vova/redux/first_screen/first_screen_state.dart';
+import 'package:redux_flutter_app_for_vova/redux/home_screen/home_screen_state.dart';
 
 @immutable
 class AppState extends Equatable {
-  final FirstScreenState firstScreenState;
+  final HomeScreenState homeScreenState;
 
   const AppState({
-    required this.firstScreenState,
+    required this.homeScreenState,
   });
 
   factory AppState.initial() {
     return AppState(
-      firstScreenState: FirstScreenState.initial(),
+      homeScreenState: HomeScreenState.initial(),
     );
   }
 
   AppState copyWith(
-    FirstScreenState? firstScreenState,
+    HomeScreenState? homeScreenState,
   ) {
     return AppState(
-      firstScreenState: firstScreenState ?? this.firstScreenState,
+      homeScreenState: homeScreenState ?? this.homeScreenState,
     );
   }
 
   @override
   List<Object> get props => [
-        firstScreenState,
+        homeScreenState,
       ];
 }
