@@ -29,7 +29,8 @@ class LocationService {
     final List<geocoding.Placemark> locationPlacemarks =
         await geocoding.placemarkFromCoordinates(
             _locationData!.latitude!, _locationData.longitude!);
-    lastKnownLocation = '${locationPlacemarks.first.administrativeArea}, '
+    lastKnownLocation =
+        '${locationPlacemarks.first.subAdministrativeArea!.split(' ')[0]}, '
         '${locationPlacemarks.first.isoCountryCode}';
     return lastKnownLocation;
   }

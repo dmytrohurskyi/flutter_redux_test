@@ -8,27 +8,27 @@ class ApiService {
 
   final _locationService = LocationService();
 
-  final dio = Dio(BaseOptions(
-      baseUrl: 'https://community-open-weather-map.p.rapidapi.com/'));
+  final dio =
+      Dio(BaseOptions(baseUrl: 'https://api.openweathermap.org/data/2.5/'));
 
-  Future<WeatherData?> fetchCurrentWeather() async {
+  Future<dynamic> fetchCurrentWeather() async {
     final location = await _locationService.getLocationName();
+    const String appId = '285864255ee2f17e40e21232679a7174';
 
-    final headers = {
-      'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
-      'x-rapidapi-key': '4faf0a50cfmshe772e0e39c20e6ap1e34f8jsn83d15eaf758a'
-    };
-    try{
+    try {
       final response = await dio.get('/weather',
-          queryParameters: {'q': location, 'units': 'metric'},
-          options: Options(headers: headers));
+          queryParameters: {'q': location, 'units': 'metric', 'appid': appId});
 
-        final weatherData = WeatherData.fromJson(response.data);
-        weatherData.locationName = location;
-        return weatherData;
-    }
-    catch(ex){
+      final weatherData = WeatherData.fromJson(response.data);
+      weatherData.locationName = location;
+      return weatherData;
+    } catch (ex) {
+      if (ex is DioError) {
+        return 'Type: ${ex.error}'
+            '\n${ex.response?.data['cod']}: ${ex.response?.data['message']}';
+      } else {
         return null;
+      }
     }
   }
 }

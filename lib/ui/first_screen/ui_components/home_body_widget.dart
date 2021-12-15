@@ -16,10 +16,15 @@ class HomeBodyWidget extends StatelessWidget {
       return const LoadingDataIndicatorWidget();
     }
     if (viewModel.error.isNotEmpty) {
-      return const Center(
-        child: Text(
-          'Some error occurred!',
-          style: TextStyle(fontSize: 20),
+      return Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.redAccent,
+        child: Center(
+          child: Text(
+            'Some error occurred!\n${viewModel.error}',
+            style: const TextStyle(fontSize: 19, color: Colors.white),
+          ),
         ),
       );
     }
