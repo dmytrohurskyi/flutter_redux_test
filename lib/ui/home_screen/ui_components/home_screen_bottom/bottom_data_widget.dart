@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redux_flutter_app_for_vova/data_models/weather_data.dart';
-import 'package:redux_flutter_app_for_vova/ui/first_screen/ui_components/home_screen_bottom/start_column_widget.dart';
+import 'package:redux_flutter_app_for_vova/ui/home_screen/ui_components/home_screen_bottom/start_column_widget.dart';
 
 import 'end_column_widget.dart';
 import 'middle_column_widget.dart';

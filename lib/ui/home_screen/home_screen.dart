@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redux_flutter_app_for_vova/services/api_service.dart';
-import 'package:redux_flutter_app_for_vova/ui/first_screen/home_screen_view_model.dart';
-import 'package:redux_flutter_app_for_vova/ui/first_screen/ui_components/home_body_widget.dart';
+import 'package:redux_flutter_app_for_vova/ui/home_screen/home_screen_view_model.dart';
+import 'package:redux_flutter_app_for_vova/ui/home_screen/ui_components/home_body_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   final HomeScreenViewModel viewModel;

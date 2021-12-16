@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux_flutter_app_for_vova/redux/app/app_state.dart';
 import 'package:redux_flutter_app_for_vova/redux/home_screen/home_screen_action.dart';
-import 'package:redux_flutter_app_for_vova/ui/first_screen/home_screen.dart';
-import 'package:redux_flutter_app_for_vova/ui/first_screen/home_screen_view_model.dart';
+import 'package:redux_flutter_app_for_vova/ui/home_screen/home_screen.dart';
+import 'package:redux_flutter_app_for_vova/ui/home_screen/home_screen_view_model.dart';
 
 class HomeScreenConnector extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, HomeScreenViewModel>(
