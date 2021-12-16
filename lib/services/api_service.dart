@@ -6,21 +6,21 @@ import 'location_service.dart';
 class ApiService {
   ApiService();
 
-  final _locationService = LocationService();
+  // final _locationService = LocationService();
 
   final dio =
       Dio(BaseOptions(baseUrl: 'https://api.openweathermap.org/data/2.5/'));
 
-  Future<dynamic> fetchCurrentWeather() async {
-    final location = await _locationService.getLocationName();
+  Future<dynamic> fetchCurrentWeather(String cityName) async {
+    // final location = await _locationService.getLocationName();
     const String appId = '285864255ee2f17e40e21232679a7174';
 
     try {
       final response = await dio.get('/weather',
-          queryParameters: {'q': location, 'units': 'metric', 'appid': appId});
+          queryParameters: {'q': cityName, 'units': 'metric', 'appid': appId});
 
       final weatherData = WeatherData.fromJson(response.data);
-      weatherData.locationName = location;
+      weatherData.locationName = cityName;
       return weatherData;
     } catch (ex) {
       if (ex is DioError) {

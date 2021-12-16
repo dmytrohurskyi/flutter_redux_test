@@ -7,13 +7,13 @@ class HomeScreenState extends Equatable {
   final String error;
   final bool isLoading;
   final WeatherData? weatherData;
-  final String loadingErrorMessage;
+  final String selectedCity;
 
   const HomeScreenState({
     required this.error,
     required this.isLoading,
     required this.weatherData,
-    required this.loadingErrorMessage,
+    required this.selectedCity,
   });
 
   factory HomeScreenState.initial() {
@@ -21,7 +21,7 @@ class HomeScreenState extends Equatable {
       error: '',
       isLoading: true,
       weatherData: WeatherData(),
-      loadingErrorMessage: '',
+      selectedCity: '',
     );
   }
 
@@ -29,13 +29,13 @@ class HomeScreenState extends Equatable {
     String? error,
     bool? isLoading,
     WeatherData? weatherData,
-    String? loadingErrorMessage,
+    String? selectedCity,
   }) {
     return HomeScreenState(
       error: error ?? this.error,
       isLoading: isLoading ?? this.isLoading,
       weatherData: weatherData ?? this.weatherData,
-      loadingErrorMessage: loadingErrorMessage ?? this.loadingErrorMessage,
+      selectedCity: selectedCity ?? this.selectedCity,
     );
   }
 
@@ -44,6 +44,6 @@ class HomeScreenState extends Equatable {
         error,
         isLoading,
         weatherData!,
-        loadingErrorMessage,
+        selectedCity,
       ];
 }

@@ -17,12 +17,12 @@ class MainInformation {
     humidity = json['humidity'];
   }
 
-  double? temp;
-  double? feelsLike;
-  double? tempMin;
-  double? tempMax;
-  int? pressure;
-  int? humidity;
+  dynamic temp;
+  dynamic feelsLike;
+  dynamic tempMin;
+  dynamic tempMax;
+  dynamic pressure;
+  dynamic humidity;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

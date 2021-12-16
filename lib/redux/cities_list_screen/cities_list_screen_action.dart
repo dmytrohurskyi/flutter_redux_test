@@ -1,1 +1,5 @@
-/// Here will be some actions
+class CitiesListScreenCitySelectedAction {
+  final String city;
+
+  CitiesListScreenCitySelectedAction(this.city);
+}

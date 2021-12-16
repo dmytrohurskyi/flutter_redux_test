@@ -20,7 +20,6 @@ class HomeScreenConnector extends StatelessWidget {
           error: store.state.homeScreenState.error,
           isLoading: store.state.homeScreenState.isLoading,
           weatherData: store.state.homeScreenState.weatherData,
-          loadingErrorMessage: store.state.homeScreenState.loadingErrorMessage,
         );
       },
       builder: (_, viewModel) {

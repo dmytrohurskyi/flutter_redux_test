@@ -30,7 +30,7 @@ class WeatherData {
 
   List<Weather>? weather;
   MainInformation? mainInformation;
-  int? visibility;
+  dynamic visibility;
   Wind? wind;
   int? dt;
   TimeStamps? timeStamps;

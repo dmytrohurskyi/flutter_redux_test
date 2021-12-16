@@ -5,14 +5,12 @@ class HomeScreenViewModel extends Equatable {
   final String error;
   final bool isLoading;
   final WeatherData? weatherData;
-  final String loadingErrorMessage;
 
 
   const HomeScreenViewModel(
       {required this.error,
       required this.isLoading,
-      required this.weatherData,
-      required this.loadingErrorMessage});
+      required this.weatherData,});
 
   @override
   List<Object> get props => [

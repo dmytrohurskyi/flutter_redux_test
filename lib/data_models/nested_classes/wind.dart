@@ -7,7 +7,7 @@ class Wind {
     speed = json['speed'];
   }
 
-  num? speed;
+  dynamic speed;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

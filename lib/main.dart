@@ -17,6 +17,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static final navKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: routes,
       initialRoute: '/',
+      navigatorKey: navKey,
     );
   }
 }
+
