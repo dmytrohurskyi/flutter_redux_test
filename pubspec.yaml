@@ -29,6 +29,12 @@ dependencies:
   location:
   geocoding:
   intl:
+  firebase_core:
+  firebase_analytics:
+  firebase_crashlytics:
+  firebase_remote_config:
+  get_it:
+  package_info: 
 
 
   # The following adds the Cupertino Icons font to your application.

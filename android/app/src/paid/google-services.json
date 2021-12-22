@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "63060463055",
+    "project_id": "flutter-weather-app-96b8d",
+    "storage_bucket": "flutter-weather-app-96b8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63060463055:android:6f12335d054030ab1796ba",
+        "android_client_info": {
+          "package_name": "com.example.redux_flutter_app_for_vova.free"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63060463055-osfsnsj9afno75sc98ijkq87se3ajsrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1mIrctGUOweXEAiQkxZzXVhDmyZfTwJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63060463055-osfsnsj9afno75sc98ijkq87se3ajsrv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63060463055:android:aeb479d4e6a954651796ba",
+        "android_client_info": {
+          "package_name": "com.example.redux_flutter_app_for_vova.paid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63060463055-osfsnsj9afno75sc98ijkq87se3ajsrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1mIrctGUOweXEAiQkxZzXVhDmyZfTwJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63060463055-osfsnsj9afno75sc98ijkq87se3ajsrv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

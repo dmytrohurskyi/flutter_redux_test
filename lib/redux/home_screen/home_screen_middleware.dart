@@ -1,8 +1,7 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_flutter_app_for_vova/data_models/weather_data.dart';
 import 'package:redux_flutter_app_for_vova/redux/app/app_state.dart';
 import 'package:redux_flutter_app_for_vova/redux/home_screen/home_screen_action.dart';
-import 'package:redux_flutter_app_for_vova/redux/home_screen/home_screen_state.dart';
 import 'package:redux_flutter_app_for_vova/services/api_service.dart';
 
 class HomeScreenMiddleware extends MiddlewareClass<AppState> {
@@ -26,9 +25,12 @@ class HomeScreenMiddleware extends MiddlewareClass<AppState> {
   void _fetchWeather(Store<AppState> store) async {
     apiService
         .fetchCurrentWeather(store.state.homeScreenState.selectedCity)
-        .then((response) {
+        .then((response) async {
       if (response == null || response is String) {
         // isError = true;
+        await FirebaseCrashlytics.instance.recordError(
+            response, StackTrace.current,
+            reason: 'a fatal error from api', fatal: true);
         store.dispatch(HomeScreenErrorOccurredAction(response));
       } else {
         store.dispatch(HomeScreenSaveWeatherAction(response));
