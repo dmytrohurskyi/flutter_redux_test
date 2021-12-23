@@ -1,0 +1,18 @@
+{
+  "Kyiv": "Kiew",
+  "Odesa": "Odesa",
+  "Lviv": "Lemberg",
+  "NewYork": "New York",
+  "London": "London",
+  "loadingWeatherDataMsg": "Wetterdaten werden geladen...",
+  "someErrorOccurredMsg": "Ein Fehler ist aufgetreten!\n {errorText}",
+  "updatedAt": "Aktualisiert am {date} um {time}",
+  "forecastBtnTitle": "VORHERSAGE",
+  "pressureTitle": "Druck",
+  "sunriseTitle": "Sonnenaufgang",
+  "humidityTitle": "Feuchtigkeit",
+  "windSpeedTitle": "Wind",
+  "metersPerSec": "m/s",
+  "sunsetTitle": "Sonnenuntergang"
+
+}

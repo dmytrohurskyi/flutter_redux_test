@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:redux_flutter_app_for_vova/generated/l10n.dart';
 
 class ForecastRoundButtonWidget extends StatelessWidget {
   const ForecastRoundButtonWidget({Key? key}) : super(key: key);
@@ -9,9 +10,9 @@ class ForecastRoundButtonWidget extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 42),
       child: ElevatedButton(
         onPressed: () {},
-        child: const Text(
-          'FORECAST',
-          style: TextStyle(fontSize: 22),
+        child: Text(
+          S.of(context).forecastBtnTitle,
+          style: const TextStyle(fontSize: 22),
         ),
         style: ButtonStyle(
           padding:

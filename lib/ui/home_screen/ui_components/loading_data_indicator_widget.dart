@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:redux_flutter_app_for_vova/generated/l10n.dart';
 
 class LoadingDataIndicatorWidget extends StatelessWidget {
   const LoadingDataIndicatorWidget({Key? key}) : super(key: key);
@@ -9,16 +10,16 @@ class LoadingDataIndicatorWidget extends StatelessWidget {
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            CircularProgressIndicator(
+          children: [
+            const CircularProgressIndicator(
               backgroundColor: Colors.purpleAccent,
             ),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
             Text(
-              'Loading weather data...',
-              style: TextStyle(
+              S.of(context).loadingWeatherDataMsg,
+              style: const TextStyle(
                 fontSize: 19,
                 color: Colors.deepPurple,
               ),

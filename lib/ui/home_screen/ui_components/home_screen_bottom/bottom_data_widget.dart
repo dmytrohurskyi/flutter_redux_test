@@ -24,11 +24,11 @@ class _BottomDataWidgetState extends State<BottomDataWidget> {
       children: [
         StartColumnWidget(weatherData: widget.weatherData),
         const SizedBox(
-          width: 48,
+          width: 13,
         ),
         MiddleColumnWidget(weatherData: widget.weatherData),
         const SizedBox(
-          width: 48,
+          width: 13,
         ),
         EndColumnWidget(weatherData: widget.weatherData),
       ],

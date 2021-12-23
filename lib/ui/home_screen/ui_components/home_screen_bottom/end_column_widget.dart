@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:redux_flutter_app_for_vova/data_models/weather_data.dart';
+import 'package:redux_flutter_app_for_vova/generated/l10n.dart';
+
 class EndColumnWidget extends StatefulWidget {
   final WeatherData weatherData;
 
@@ -26,18 +28,19 @@ class _EndColumnWidgetState extends State<EndColumnWidget> {
                   width: 48,
                   color: Colors.white,
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(2.0),
+                Padding(
+                  padding: const EdgeInsets.all(2.0),
                   child: Text(
-                    'Wind Speed',
-                    style: TextStyle(
+                    S.of(context).windSpeedTitle,
+                    style: const TextStyle(
                       fontSize: 17,
                       color: Colors.white,
                     ),
                   ),
                 ),
                 Text(
-                  '${widget.weatherData.wind!.speed ?? '0.0'} m/s',
+                  '${widget.weatherData.wind!.speed ?? '0.0'} ' +
+                      S.of(context).metersPerSec,
                   style: const TextStyle(
                     fontSize: 17,
                     color: Colors.white,
@@ -60,11 +63,11 @@ class _EndColumnWidgetState extends State<EndColumnWidget> {
                   width: 48,
                   color: Colors.white,
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(1.0),
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
                   child: Text(
-                    'Sunset',
-                    style: TextStyle(
+                    S.of(context).sunsetTitle,
+                    style: const TextStyle(
                       fontSize: 17,
                       color: Colors.white,
                     ),
@@ -73,7 +76,7 @@ class _EndColumnWidgetState extends State<EndColumnWidget> {
                 Text(
                   DateFormat('hh:mm a').format(
                       DateTime.fromMillisecondsSinceEpoch(
-                              widget.weatherData.timeStamps!.sunset!)),
+                          widget.weatherData.timeStamps!.sunset!)),
                   style: const TextStyle(
                     fontSize: 17,
                     color: Colors.white,

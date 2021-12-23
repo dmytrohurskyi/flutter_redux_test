@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redux_flutter_app_for_vova/data_models/weather_data.dart';
+import 'package:redux_flutter_app_for_vova/generated/l10n.dart';
 
 class MiddleColumnWidget extends StatefulWidget {
   final WeatherData weatherData;
@@ -28,11 +29,11 @@ class _MiddleColumnWidgetState extends State<MiddleColumnWidget> {
                     width: 48,
                     color: Colors.white,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(2.0),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
                     child: Text(
-                      'Humidity',
-                      style: TextStyle(
+                      S.of(context).humidityTitle,
+                      style: const TextStyle(
                         fontSize: 17,
                         color: Colors.white,
                       ),

@@ -8,12 +8,14 @@ class HomeScreenState extends Equatable {
   final bool isLoading;
   final WeatherData? weatherData;
   final String selectedCity;
+  final String lang;
 
   const HomeScreenState({
     required this.error,
     required this.isLoading,
     required this.weatherData,
     required this.selectedCity,
+    required this.lang,
   });
 
   factory HomeScreenState.initial() {
@@ -22,6 +24,7 @@ class HomeScreenState extends Equatable {
       isLoading: true,
       weatherData: WeatherData(),
       selectedCity: '',
+      lang: 'en',
     );
   }
 
@@ -30,20 +33,17 @@ class HomeScreenState extends Equatable {
     bool? isLoading,
     WeatherData? weatherData,
     String? selectedCity,
+    String? lang,
   }) {
     return HomeScreenState(
-      error: error ?? this.error,
-      isLoading: isLoading ?? this.isLoading,
-      weatherData: weatherData ?? this.weatherData,
-      selectedCity: selectedCity ?? this.selectedCity,
-    );
+        error: error ?? this.error,
+        isLoading: isLoading ?? this.isLoading,
+        weatherData: weatherData ?? this.weatherData,
+        selectedCity: selectedCity ?? this.selectedCity,
+        lang: lang ?? this.lang);
   }
 
   @override
-  List<Object> get props => [
-        error,
-        isLoading,
-        weatherData!,
-        selectedCity,
-      ];
+  List<Object> get props =>
+      [error, isLoading, weatherData!, selectedCity, lang];
 }

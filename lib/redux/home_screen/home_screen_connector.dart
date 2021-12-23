@@ -10,9 +10,12 @@ class HomeScreenConnector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Locale _userLocale = Localizations.localeOf(context);
+
     return StoreConnector<AppState, HomeScreenViewModel>(
       distinct: true,
       onInit: (store){
+        store.dispatch(HomeScreenSaveAppLang(_userLocale.languageCode));
         store.dispatch(HomeScreenGetWeatherAction());
       },
       converter: (store) {

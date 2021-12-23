@@ -13,3 +13,9 @@ class HomeScreenSaveWeatherAction {
 
   HomeScreenSaveWeatherAction(this.weatherData);
 }
+
+class HomeScreenSaveAppLang {
+  final String lang;
+
+  HomeScreenSaveAppLang(this.lang);
+}

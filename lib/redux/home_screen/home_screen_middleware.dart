@@ -24,7 +24,8 @@ class HomeScreenMiddleware extends MiddlewareClass<AppState> {
 
   void _fetchWeather(Store<AppState> store) async {
     apiService
-        .fetchCurrentWeather(store.state.homeScreenState.selectedCity)
+        .fetchCurrentWeather(store.state.homeScreenState.lang,
+            store.state.homeScreenState.selectedCity)
         .then((response) async {
       if (response == null || response is String) {
         // isError = true;

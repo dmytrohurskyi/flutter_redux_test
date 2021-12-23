@@ -1,0 +1,17 @@
+{
+  "Kyiv": "Київ",
+  "Odesa": "Одеса",
+  "Lviv": "Львів",
+  "NewYork": "Нью-Йорк",
+  "London": "Лондон",
+  "loadingWeatherDataMsg": "Завантаження погоди...",
+  "someErrorOccurredMsg": "Виникла помилка!\n {errorText}",
+  "updatedAt": "Дані оновлено {date}, {time}",
+  "forecastBtnTitle": "ПРОГНОЗ",
+  "pressureTitle": "Атм. тиск",
+  "sunriseTitle": "Схід сонця",
+  "humidityTitle": "Вологість",
+  "windSpeedTitle": "Вітер",
+  "metersPerSec": "м/с",
+  "sunsetTitle": "Захід сонця"
+}

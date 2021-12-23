@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:redux_flutter_app_for_vova/generated/l10n.dart';
 import 'package:redux_flutter_app_for_vova/environment.dart';
 import 'package:redux_flutter_app_for_vova/ui/home_screen/home_screen_view_model.dart';
 import 'package:redux_flutter_app_for_vova/ui/home_screen/ui_components/flavors_ui/custom_gradient_decorations.dart';
@@ -33,7 +34,7 @@ class HomeBodyWidget extends StatelessWidget {
         color: Colors.redAccent,
         child: Center(
           child: Text(
-            'Some error occurred!\n${viewModel.error}',
+            S.of(context).someErrorOccurredMsg(viewModel.error),
             style: const TextStyle(fontSize: 19, color: Colors.white),
           ),
         ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:redux_flutter_app_for_vova/generated/l10n.dart';
 
 class LocationInfoWidget extends StatefulWidget {
   final String location;
   final String date;
   final String time;
 
-  LocationInfoWidget(
+  const LocationInfoWidget(
       {Key? key,
       required this.location,
       required this.date,
@@ -32,7 +33,7 @@ class _LocationInfoWidgetState extends State<LocationInfoWidget> {
             ),
           ),
           Text(
-            'Updated ${widget.date} at ${widget.time}',
+            S.of(context).updatedAt(widget.date, widget.time),
             style: TextStyle(
               fontSize: 16,
               color: Colors.grey[300],

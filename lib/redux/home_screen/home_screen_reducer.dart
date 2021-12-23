@@ -15,6 +15,9 @@ final homeScreenReducer = combineReducers<HomeScreenState>(
     TypedReducer<HomeScreenState, CitiesListScreenCitySelectedAction>(
       _citiesListScreenCitySelectedAction,
     ),
+    TypedReducer<HomeScreenState, HomeScreenSaveAppLang>(
+      _homeScreenSaveAppLang,
+    ),
   ],
 );
 
@@ -22,8 +25,8 @@ HomeScreenState _homeScreenErrorOccurredAction(
   HomeScreenState state,
   HomeScreenErrorOccurredAction action,
 ) {
-
-  return state.copyWith(isLoading: false, error: action.error ?? 'Null exception');
+  return state.copyWith(
+      isLoading: false, error: action.error ?? 'Null exception');
 }
 
 HomeScreenState _homeScreenSaveWeatherAction(
@@ -35,9 +38,12 @@ HomeScreenState _homeScreenSaveWeatherAction(
 }
 
 HomeScreenState _citiesListScreenCitySelectedAction(
-    HomeScreenState state,
-    CitiesListScreenCitySelectedAction action
-    ) {
+    HomeScreenState state, CitiesListScreenCitySelectedAction action) {
   return state.copyWith(selectedCity: action.city);
 }
 
+HomeScreenState _homeScreenSaveAppLang(
+    HomeScreenState state,
+    HomeScreenSaveAppLang action) {
+  return state.copyWith(lang: action.lang);
+}

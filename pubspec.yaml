@@ -29,6 +29,8 @@ dependencies:
   location:
   geocoding:
   intl:
+  flutter_localizations:
+    sdk: flutter
   firebase_core:
   firebase_analytics:
   firebase_crashlytics:
@@ -87,3 +89,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  main_locale: en_US
+  enabled: true

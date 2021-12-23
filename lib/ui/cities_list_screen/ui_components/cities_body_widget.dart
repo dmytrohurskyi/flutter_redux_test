@@ -10,9 +10,9 @@ class CitiesBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RemoteConfig.instance.setConfigSettings(RemoteConfigSettings(
+    /*RemoteConfig.instance.setConfigSettings(RemoteConfigSettings(
         fetchTimeout: const Duration(seconds: 10),
-        minimumFetchInterval: const Duration(seconds: 15)));
+        minimumFetchInterval: const Duration(seconds: 15)));*/
 
     return CitiesListViewWidget(citiesPropsList: viewModel.citiesPropsList);
   }

@@ -11,13 +11,17 @@ class ApiService {
   final dio =
       Dio(BaseOptions(baseUrl: 'https://api.openweathermap.org/data/2.5/'));
 
-  Future<dynamic> fetchCurrentWeather(String cityName) async {
+  Future<dynamic> fetchCurrentWeather(String lang, String cityName) async {
     // final location = await _locationService.getLocationName();
     const String appId = '285864255ee2f17e40e21232679a7174';
 
     try {
-      final response = await dio.get('/weather',
-          queryParameters: {'q': cityName, 'units': 'metric', 'appid': appId});
+      final response = await dio.get('/weather', queryParameters: {
+        'q': cityName,
+        'units': 'metric',
+        'lang': lang,
+        'appid': appId
+      });
 
       final weatherData = WeatherData.fromJson(response.data);
       weatherData.locationName = cityName;

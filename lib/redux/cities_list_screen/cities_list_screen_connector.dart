@@ -6,6 +6,7 @@ import 'package:redux_flutter_app_for_vova/redux/cities_list_screen/cities_list_
 import 'package:redux_flutter_app_for_vova/ui/cities_list_screen/cities_list_screen.dart';
 import 'package:redux_flutter_app_for_vova/ui/cities_list_screen/cities_list_screen_viewmodel.dart';
 import 'package:redux_flutter_app_for_vova/ui/cities_list_screen/ui_components/list_item_widget.dart';
+import 'package:redux_flutter_app_for_vova/generated/l10n.dart';
 
 class CitiesListScreenConnector extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class CitiesListScreenConnector extends StatelessWidget {
     return StoreConnector<AppState, CitiesListScreenViewModel>(
       distinct: true,
       converter: (store) {
-        final _cityProps = _generateCityItemProps(store);
+        final _cityProps = _generateCityItemProps(context, store);
         return CitiesListScreenViewModel(
           citiesPropsList: _cityProps,
         );
@@ -26,32 +27,32 @@ class CitiesListScreenConnector extends StatelessWidget {
     );
   }
 
-  List<CitiesListItemProps> _generateCityItemProps(Store<AppState> store) {
+  List<CitiesListItemProps> _generateCityItemProps(BuildContext context, Store<AppState> store) {
     return [
       CitiesListItemProps(
-          city: 'Kyiv',
+          city: S.of(context).Kyiv,
           onPress: () {
-            store.dispatch(CitiesListScreenCitySelectedAction('Kyiv'));
+            store.dispatch(CitiesListScreenCitySelectedAction('Kyiv, UA'));
           }),
       CitiesListItemProps(
-          city: 'Odesa',
+          city: S.of(context).Odesa,
           onPress: () {
-            store.dispatch(CitiesListScreenCitySelectedAction('Odesa'));
+            store.dispatch(CitiesListScreenCitySelectedAction('Odesa, UA'));
           }),
       CitiesListItemProps(
-          city: 'London',
+          city: S.of(context).London,
           onPress: () {
-            store.dispatch(CitiesListScreenCitySelectedAction('London'));
+            store.dispatch(CitiesListScreenCitySelectedAction('London, UK'));
           }),
       CitiesListItemProps(
-          city: 'New York',
+          city: S.of(context).NewYork,
           onPress: () {
-            store.dispatch(CitiesListScreenCitySelectedAction('New York'));
+            store.dispatch(CitiesListScreenCitySelectedAction('New York, US'));
           }),
       CitiesListItemProps(
-          city: 'Lviv, Ukraine',
+          city: S.of(context).Lviv,
           onPress: () {
-            store.dispatch(CitiesListScreenCitySelectedAction('Lviv, Ukraine'));
+            store.dispatch(CitiesListScreenCitySelectedAction('Lviv, UA'));
           }),
     ];
   }

@@ -20,7 +20,7 @@ class _WeatherDescriptionWidgetState extends State<WeatherDescriptionWidget> {
       padding: const EdgeInsets.all(10.0),
       child: Text(
         widget.weatherData.weather!.first.description!.replaceFirst(
-            RegExp(r'[a-z]'),
+            RegExp(r'\p{Letter}', unicode: true),
             widget.weatherData.weather!.first.description![0].toUpperCase()),
         style: const TextStyle(fontSize: 22, color: Colors.white),
       ),
